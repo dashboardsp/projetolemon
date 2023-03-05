@@ -1,0 +1,17 @@
+logs
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.grunt
+.lock-wscript
+build/Release
+node_modules
+
+# Project exclude paths
+/.gradle/
+/build/
+/client/.gradle/

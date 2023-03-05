@@ -1,0 +1,79 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2' // Latest Gradle plugin version as of now
+        // Add any other plugins you may need here
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        // Add any other repositories you may need here
+    }
+}
+
+// Define common dependencies for all modules here
+ext {
+    // Add any common dependencies you may need here
+}
+
+// Define common configuration for all modules here
+subprojects {
+    apply plugin: 'com.android.library'
+    android {
+        compileSdkVersion 31 // Latest SDK version as of now
+        buildToolsVersion "31.0.0" // Latest Build Tools version as of now
+        defaultConfig {
+            minSdkVersion 21 // Minimum SDK version your app supports
+            targetSdkVersion 31 // Target SDK version your app is built for
+            versionCode 1 // Your app's version code
+            versionName "1.0" // Your app's version name
+            // Add any other configuration you may need here
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_11 // Latest Java version as of now
+            targetCompatibility JavaVersion.VERSION_11 // Latest Java version as of now
+        }
+        // Add any other configuration you may need here
+    }
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        // Add any module-specific dependencies you may need here
+    }
+}
+
+// Define application configuration here
+apply plugin: 'com.android.application'
+android {
+    compileSdk 30
+// Latest SDK version as of now
+    buildToolsVersion '29.0.2' // Latest Build Tools version as of now
+    defaultConfig {
+        applicationId "br.com.assessoriarealeza.irp" // Replace with your package name
+        minSdkVersion 21 // Minimum SDK version your app supports
+        targetSdkVersion 31 // Target SDK version your app is built for
+        versionCode 1 // Your app's version code
+        versionName "1.0" // Your app's version name
+        // Add any other configuration you may need here
+    }
+    buildTypes {
+        release {
+            // Add any release-specific configuration you may need here
+        }
+        debug {
+            // Add any debug-specific configuration you may need here
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11 // Latest Java version as of now
+        targetCompatibility JavaVersion.VERSION_11 // Latest Java version as of now
+    }
+    // Add any other configuration you may need here
+}
